@@ -3,6 +3,9 @@ source ~\AppData\Local\nvim\plugins.vim
 source ~\AppData\Local\nvim\settings.vim
 source ~\AppData\Local\nvim\mapping.lua
 
+Uncomment this line after download the theme plug
+" colorscheme gruvbox-baby
+
 set encoding=utf-8
 set fileencoding=utf-8
 set clipboard=unnamedplus
@@ -36,7 +39,7 @@ autocmd FileType man let &titlestring = expand('%:t') . ' — nvim'
 set title
 set autochdir
 set background=dark
-colorscheme gruvbox-baby
+
 
 hi Normal guibg=NONE ctermbg=NONE
 
