@@ -1,3 +1,4 @@
+" You have to change this to your own path
 source ~\AppData\Local\nvim\plugins.vim
 source ~\AppData\Local\nvim\settings.vim
 source ~\AppData\Local\nvim\mapping.lua
