@@ -7,6 +7,8 @@ utilizar outras máquinas.
 As configurações estão todas comentadas em PT-BR facilitando os falantes da
 linguá de entrar nesse mundo.
 
+> There are two branches avaiable, main with just pure vim with some plugins and master with lazyvim
+
 
 ## Intalação 
 
