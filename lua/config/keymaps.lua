@@ -20,3 +20,7 @@ keymap.set("n", "<leader>to", ":BufferLineCloseOthers<cr>", opts)
 keymap.set("n", "<leader>tn", ":tabnew<cr>", opts)
 -- Select all file
 keymap.set("n", "ya", "<esc>ggVG", opts)
+
+-- Go to the begin and end of a line using control e-a like on terminal
+keymap.set("i", "<C-e>", "<end>", opts)
+keymap.set("i", "<C-a>", "<home>", opts)
