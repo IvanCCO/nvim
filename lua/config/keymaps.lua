@@ -24,3 +24,9 @@ keymap.set("n", "ya", "<esc>ggVG", opts)
 -- Go to the begin and end of a line using control e-a like on terminal
 keymap.set("i", "<C-e>", "<end>", opts)
 keymap.set("i", "<C-a>", "<home>", opts)
+
+-- Add a line bellow without put cursor down
+keymap.set("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", opts)
+
+--  Transform word on uppercase
+keymap.set("n", "<leader>up", "<Esc>viwUea<Esc>", opts)
