@@ -22,7 +22,7 @@ return {
       function()
         local builtin = require("telescope.builtin")
         builtin.find_files({
-          no_ignore = false,
+          no_ignore = true,
           hidden = true,
         })
       end,
@@ -132,7 +132,9 @@ return {
           -- your custom insert mode mappings
           ["n"] = {
             -- your custom normal mode mappings
-            ["N"] = fb_actions.create,
+            ["<leader>nf"] = fb_actions.create,
+            ["<leader>rr"] = fb_actions.rename,
+            ["<leader>rm"] = fb_actions.remove,
             ["h"] = fb_actions.goto_parent_dir,
             ["/"] = function()
               vim.cmd("startinsert")
