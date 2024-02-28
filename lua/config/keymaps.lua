@@ -30,3 +30,5 @@ keymap.set("n", "<leader>o", "printf('m`%so<ESC>``', v:count2)", opts)
 
 --  Transform word on uppercase
 keymap.set("n", "<leader>up", "<Esc>viwUea<Esc>", opts)
+
+keymap.set("n", "<leader>up", "<Esc>viwUea<Esc>", opts)
