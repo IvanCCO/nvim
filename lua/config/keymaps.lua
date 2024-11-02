@@ -1,34 +1,50 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps hereby
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Delete some pre-builds keys from lazyvim
-keymap.del("n", "<C-s>")
-keymap.del("n", "<leader>e")
+-- Defaults
+keymap.set("n", "<Leader>w", ":w<Return>", { silent = true })
 
---Delete with x does not copy to clipboard
+-- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
--- Save file using leader w
-keymap.set("n", "<leader>w", ":w<cr>", opts)
--- Open neo tree (sidepart files)
-keymap.set("n", "<C-n>", ":Neotree<cr>", opts)
--- Keep just current buffer opened
-keymap.set("n", "<leader>to", ":BufferLineCloseOthers<cr>", opts)
--- Adding a new tab (file)
-keymap.set("n", "<leader>tn", ":tabnew<cr>", opts)
--- Select all file
-keymap.set("n", "va", "<esc>ggVG", opts)
+keymap.set("n", "<Leader>p", '"0p')
+keymap.set("n", "<Leader>P", '"0P')
+keymap.set("v", "<Leader>p", '"0p')
+keymap.set("n", "<Leader>c", '"_c')
+keymap.set("n", "<Leader>C", '"_C')
+keymap.set("v", "<Leader>c", '"_c')
+keymap.set("v", "<Leader>C", '"_C')
+keymap.set("n", "<Leader>d", '"_d')
+keymap.set("n", "<Leader>D", '"_D')
+keymap.set("v", "<Leader>d", '"_d')
+keymap.set("v", "<Leader>D", '"_D')
 
--- Go to the begin and end of a line using control e-a like on terminal
-keymap.set("i", "<C-e>", "<end>", opts)
-keymap.set("i", "<C-a>", "<home>", opts)
+-- Increment/decrement
+keymap.set("n", "+", "<C-a>")
+keymap.set("n", "-", "<C-x>")
 
--- Add a line bellow without put cursor down
-keymap.set("n", "<leader>o", "printf('m`%so<ESC>``', v:count2)", opts)
+-- Select all
+keymap.set("n", "<C-a>", "gg<S-v>G")
 
---  Transform word on uppercase
-keymap.set("n", "<leader>up", "<Esc>viwUea<Esc>", opts)
+-- New tab
+keymap.set("n", "te", ":tabedit")
+keymap.set("n", "<tab>", ":tabnext<Return>", opts)
+keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 
-keymap.set("n", "<leader>up", "<Esc>viwUea<Esc>", opts)
+-- Resize window
+keymap.set("n", "<C-w><left>", "<C-w><")
+keymap.set("n", "<C-w><right>", "<C-w>>")
+keymap.set("n", "<C-w><up>", "<C-w>+")
+keymap.set("n", "<C-w><down>", "<C-w>-")
+
+-- Diagnostics
+keymap.set("n", "<C-j>", function()
+	vim.diagnostic.goto_next()
+end, opts)
+
+keymap.set("n", "<leader>r", function()
+	require("craftzdog.hsl").replaceHexWithHSL()
+end)
+
+keymap.set("n", "<leader>i", function()
+	require("craftzdog.lsp").toggleInlayHints()
+end)
