@@ -14,7 +14,7 @@ return {
 	},
 
 	{
-		"echasnovski/mini.hipatterns",
+		"nvim-mini/mini.hipatterns",
 		event = "BufReadPre",
 		opts = {
 			highlighters = {
@@ -49,7 +49,7 @@ return {
 	},
 
 	{
-		"telescope.nvim",
+		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",

@@ -1,7 +1,7 @@
 return {
 	-- tools
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		opts = function(_, opts)
 			vim.list_extend(opts.ensure_installed, {
 				"stylua",
@@ -29,7 +29,7 @@ return {
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
 				},
-				tsserver = {
+				ts_ls = {
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
